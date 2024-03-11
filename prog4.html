@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <h1 id="clock">11:22:02 pm</h1>
+    </div>
+  </body>
+  <script>
+    function date() {
+      let dt = new Date();
+      console.log(dt);
+      hr = dt.getHours();
+      mn = dt.getMinutes();
+      sc = dt.getSeconds();
+      document.querySelector("#clock").innerHTML = `${hr}:${mn}:${sc} ${
+        hr > 12 ? "PM" : "AM"
+      }`;
+      setTimeout(() => {
+        date();
+      }, 1000);
+    }
+    date();
+  </script>
+</html>
